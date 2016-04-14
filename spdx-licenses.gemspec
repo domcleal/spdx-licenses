@@ -14,6 +14,4 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.files = `git ls-files`.split("\n") - Dir[".*", "Gem*", "*.gemspec"]
-
-  s.add_dependency 'json'
 end
