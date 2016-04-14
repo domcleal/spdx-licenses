@@ -4,12 +4,24 @@ require 'spdx-licenses/version'
 
 module SpdxLicenses
   def self.data
-    @@data ||= JSON.load(File.read(File.expand_path('../../spdx.json', __FILE__)))
+    unless defined?(@@data)
+      spdx = JSON.load(File.read(File.expand_path('../../licenses.json', __FILE__)))
+
+      # Convert the array of hashes to a hash with the license ID as the key and
+      # the rest of each hash as the value.
+      @@data = {}
+      spdx['licenses'].each do |details|
+        id = details.delete('licenseId')
+        @@data[id] = details
+      end
+    end
+
+    @@data
   end
 
   def self.lookup(id)
     entry = data[id.to_s]
-    SpdxLicenses::License.new(id.to_s, entry['name'], entry['osiApproved']) if entry
+    SpdxLicenses::License.new(id.to_s, entry['name'], entry['isOsiApproved']) if entry
   end
 
   def self.exist?(id)
