@@ -3,4 +3,4 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'mocha', :require => false
-gem 'rake'
+gem 'rake', '< 11'
