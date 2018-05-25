@@ -1,10 +1,10 @@
 $LOAD_PATH << File.expand_path('../../lib', __FILE__)
 
-require 'test/unit'
-require 'mocha/test_unit'
+require 'minitest/autorun'
+require 'mocha/minitest'
 require 'spdx-licenses/license'
 
-class TestLicense < Test::Unit::TestCase
+class TestLicense < Minitest::Test
   def setup
     @license = SpdxLicenses::License.new('Apache-2.0', 'Apache License 2.0', true)
   end

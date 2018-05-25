@@ -1,10 +1,10 @@
 $LOAD_PATH << File.expand_path('../../lib', __FILE__)
 
-require 'test/unit'
-require 'mocha/test_unit'
+require 'minitest/autorun'
+require 'mocha/minitest'
 require 'spdx-licenses'
 
-class TestSpdxLicenses < Test::Unit::TestCase
+class TestSpdxLicenses < Minitest::Test
   def test_exist_unknown
     assert_equal false, SpdxLicenses.exist?('unknown')
   end
