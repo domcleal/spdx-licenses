@@ -24,6 +24,7 @@ contain updates to the SPDX License List data.
 | 1.0.0         | 1.2.0             |
 | 1.1.0         | 2.4               |
 | 1.2.0         | 3.1               |
+| 1.3.0         | 3.11-54           |
 
 ## Usage
 
@@ -44,4 +45,4 @@ contain updates to the SPDX License List data.
 
 ## License
 
-Copyright (c) 2014-2018 Dominic Cleal.  Distributed under the MIT license.
+Copyright (c) 2014-2021 Dominic Cleal.  Distributed under the MIT license.
